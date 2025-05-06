@@ -1,0 +1,116 @@
+---
+const paginaActiva =
+    "block px-4 py-2 text-blue-700 font-bold hover:text-amber-500 transition duration-500";
+const paginaInActiva =
+    "block px-4 py-2 text-gray-600 hover:text-amber-500 transition duration-700";
+
+const inicioRuta = "index.html";
+/* const programaRuta = "/programa"; */
+const cuotaRuta = "cuotas.html";
+const registroRuta = "registro.html";
+
+const { pagetitle } = Astro.props;
+
+const direcConv = "registroPonentes.html";
+---
+
+<!-- Navbar -->
+<nav
+    id="navbar"
+    class="fixed top-0 left-0 z-50 backdrop-blur-md w-full border-b-4 border-amber-500 shadow-lg transition-transform duration-500"
+    style="background-color: rgba(255, 255, 255, 0.8);"
+>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            <a href="index">
+                <img src="svg/logo.svg" alt="" class="w-1/8 p-2" />
+            </a>
+            <div class="hidden md:flex space-x-4 md:space-x-0">
+                <as
+                    href={inicioRuta}
+                    class={pagetitle == "Inicio - RHC"
+                        ? paginaActiva
+                        : paginaInActiva}>Inicio</as
+                >
+
+                <a
+                    href={cuotaRuta}
+                    class={pagetitle == "Cuotas - RHC"
+                        ? paginaActiva
+                        : paginaInActiva}>Cuotas</a
+                >
+                <a
+                    href={registroRuta}
+                    class={pagetitle == "Registro - RHC"
+                        ? paginaActiva
+                        : paginaInActiva}>Registro</a
+                >
+                <a
+                    href={direcConv}
+                    class="block font-bold rounded-full px-4 py-2 border-4 border-blue-700 text-blue-700 hover:border-black hover:text-black transition duration-700"
+                    >Iniciar sesión</a
+                >
+            </div>
+            <div class="md:hidden">
+                <button
+                    id="navbarBurger"
+                    class="text-blue-800 hover:text-gray-900 focus:outline-none"
+                >
+                    <svg
+                        class="w-9 h-9"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="navbarMenu" class="hidden md:hidden">
+        <br />
+        <hr />
+        <br />
+        <a
+            href={inicioRuta}
+            class={pagetitle == "Inicio - RHC" ? paginaActiva : paginaInActiva}
+            >Inicio</a
+        >
+        <!-- <a
+            href={programaRuta}
+            class={pagetitle == "Programa - RHC"
+                ? paginaActiva
+                : paginaInActiva}>Programa</a
+        > -->
+        <a
+            href={cuotaRuta}
+            class={pagetitle == "Cuotas - RHC" ? paginaActiva : paginaInActiva}
+            >Cuotas</a
+        >
+        <a
+            href={registroRuta}
+            class={pagetitle == "Registro - RHC"
+                ? paginaActiva
+                : paginaInActiva}>Registro</a
+        >
+        <br />
+        <hr />
+        <br />
+        <br />
+        <a
+            href={direcConv}
+            class="m-4 font-bold rounded-full px-4 py-2 border-4 text-blue-700 border-blue-700 hover:border-black hover:text-black transition duration-700"
+            >Generar registro</a
+        >
+        <br />
+        <br />
+        <br />
+    </div>
+</nav>

@@ -1,16 +1,30 @@
 ---
+const pagetitle = "Univars";
 
+import Base from "../layouts/Base.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Base pagetitle={pagetitle}>
+	<div
+		class="flex flex-col items-center justify-center w-full h-screen bg-cover bg-center"
+		style="background-image:url('/img/fondo_index.webp')"
+	>
+		<img
+			src="/svg/logob.svg"
+			alt=""
+			class="pt-0 md:pt-12 md:w-2/4 w-3/4 lg:w-1/4"
+		/>
+		<h1 class="text-center text-3xl font-bold text-white pt-24 pb-8">
+			<em>Donde la Innovación se Encuentra con la Excelencia Académica</em
+			>
+		</h1>
+		<p class="text-white text-center text-lg px-4 md:px-24 lg:px-84">
+			En Univars, forjamos líderes y pensadores capaces de reinventar el
+			mundo. Descubre programas diseñados para impulsar tu pasión,
+			conectarte con una comunidad global y acceder a oportunidades que
+			desafían los límites del conocimiento.
+		</p>
+	</div>
+
+	<div></div>
+</Base>

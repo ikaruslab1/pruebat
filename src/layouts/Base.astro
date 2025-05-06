@@ -1,0 +1,32 @@
+---
+const { pagetitle } = Astro.props;
+
+import "../../node_modules/aos/dist/aos.css";
+import Navbar from "../components/Navbar.astro";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pagetitle}</title>
+        <link rel="icon" href="favicon.svg" type="image/x-icon" />
+        <script
+            src="https://kit.fontawesome.com/666635bc15.js"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"
+        ></script>
+    </head>
+
+    <body>
+        <Navbar />
+        <slot />
+
+        <script>
+            import AOS from "aos";
+            AOS.init();
+            import "../scripts/navbar";
+        </script>
+    </body>
+</html>
